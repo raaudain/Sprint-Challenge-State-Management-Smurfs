@@ -3,6 +3,7 @@ import "./App.css";
 import {fetchSmurfs} from "../actions/SmurfAction";
 import {connect} from "react-redux";
 import SmurfsList from "./Smurfs/SmurfsList";
+import SmurfsForm from "./Smurfs/SmurfsForm"
 
 function App(props) {
 
@@ -19,6 +20,9 @@ function App(props) {
       <div>Start inside of your `src/index.js` file!</div>
       <div>Have fun!</div>
       <SmurfsList smurfs={props.smurfs}/>
+      <SmurfsForm 
+      smurfs={props.smurfs}
+      />
     </div>
   );
 }
@@ -29,7 +33,7 @@ function App(props) {
 
 const mapStateToProps = state => {
 
-  console.log("state", state)
+  console.log("state", state.smurfs)
   return{
     smurfs: state.smurfs
   }
