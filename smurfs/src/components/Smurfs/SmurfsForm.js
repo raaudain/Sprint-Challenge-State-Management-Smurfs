@@ -8,8 +8,7 @@ function SmurfsForm(props){
     const [newSmurf, setNewSmurf] = useState({
         name: "",
         age: 0,
-        height: "",
-        //id: Date.now()
+        height: ""
     })
 
 
@@ -18,15 +17,16 @@ function SmurfsForm(props){
         setNewSmurf({
             ...newSmurf,
             [e.target.name]: [e.target.value],
-            
         })
     }
 
     console.log(setNewSmurf)
 
+    
     const submitHandler = e => {
         e.preventDefault();
         props.postSmurfs(newSmurf);
+        setNewSmurf("")
     }
 
     return(

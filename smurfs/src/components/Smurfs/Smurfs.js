@@ -5,7 +5,7 @@ const Smurfs = props => {
     console.log("Smurfs", props.smurf)
 
     return(
-        <div>
+        <div className="card">
             <p>Name: {props.smurf.name}</p>
             <p>Age: {props.smurf.age}</p>
             <p>Height: {props.smurf.height}</p>

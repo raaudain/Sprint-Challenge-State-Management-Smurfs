@@ -25,8 +25,8 @@ export const postSmurfs = smurf => dispatch => {
     axios
         .post("http://localhost:3333/smurfs", smurf)
         .then(res => {
-            console.log("Post",res)
-            //dispatch({type: POST_SUCCESS, payload: res})
+            console.log("Post",res.data)
+            dispatch({type: POST_SUCCESS, payload: res.data})
         })
         .catch(err => dispatch({type: POST_FAILURE, payload: err.response}))
 }
