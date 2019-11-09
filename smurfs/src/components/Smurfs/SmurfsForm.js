@@ -11,8 +11,6 @@ function SmurfsForm(props){
         height: ""
     })
 
-
-
     const changeHandler = e => {
         setNewSmurf({
             ...newSmurf,
@@ -26,7 +24,7 @@ function SmurfsForm(props){
     const submitHandler = e => {
         e.preventDefault();
         props.postSmurfs(newSmurf);
-        setNewSmurf("")
+        setNewSmurf("");
     }
 
     return(
@@ -45,11 +43,5 @@ const mapDispatchToProps = {
     postSmurfs
 }
 
-// const mapStateToProps = state => {
-//     console.log("SmurfsFormoo", state)
-//     return{
-//         smurfs: state.smurfs
-//     }
-    
-// }
+
 export default connect(null, mapDispatchToProps)(SmurfsForm)
